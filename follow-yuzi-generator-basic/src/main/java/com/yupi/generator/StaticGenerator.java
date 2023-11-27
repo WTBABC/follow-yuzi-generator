@@ -1,7 +1,6 @@
 package com.yupi.generator;
 
 import cn.hutool.core.io.FileUtil;
-import com.sun.deploy.util.ArrayUtil;
 
 import java.io.File;
 import java.io.IOException;
