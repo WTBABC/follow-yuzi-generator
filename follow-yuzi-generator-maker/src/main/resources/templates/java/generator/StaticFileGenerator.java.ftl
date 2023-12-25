@@ -1,4 +1,4 @@
-package com.yupi.maker.generator.file;
+package ${basePackage}.generator;
 
 import cn.hutool.core.io.FileUtil;
 

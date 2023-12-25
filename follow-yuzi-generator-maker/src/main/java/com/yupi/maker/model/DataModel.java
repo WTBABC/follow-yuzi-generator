@@ -1,9 +1,9 @@
-package com.yupi.model;
+package com.yupi.maker.model;
 
 import lombok.Data;
 
 @Data
-public class MainTemplateConfig {
+public class DataModel {
     private boolean loop;
 
     private String author;

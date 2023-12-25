@@ -1,12 +1,16 @@
-package com.yupi.maker.model;
+package ${basePackage}.model;
 
 import lombok.Data;
 
 @Data
 public class DataModel {
-    private boolean loop;
+<#list modelConfig.models as model>
 
-    private String author;
-
-    private String outputText;
+    <#if model.description??>
+    /**
+     * ${model.description}
+     */
+    </#if>
+    private ${model.type} ${model.fieldName}<#if model.defaultValue??> = ${model.defaultValue?c}</#if>;
+</#list>
 }

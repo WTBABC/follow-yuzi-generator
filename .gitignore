@@ -5,6 +5,7 @@
 target
 follow-yuzi-generator.iml
 follow-yuzi-generator-basic.iml
+generated
 
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider

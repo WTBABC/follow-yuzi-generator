@@ -1,4 +1,4 @@
-package com.yupi.maker.cli.command;
+package ${basePackage}.cli.command;
 
 import cn.hutool.core.io.FileUtil;
 import picocli.CommandLine.Command;
@@ -11,9 +11,7 @@ public class ListCommand implements Runnable{
 
     @Override
     public void run() {
-        String projectPath = System.getProperty("user.dir");
-        File parentFile = new File(projectPath).getParentFile();
-        String inputPath = new File(parentFile, "follow-yuzi-generator-demo-projects\\acm-template").getAbsolutePath();
+        String inputPath = "${fileConfig.inputRootPath}";
         List<File> files = FileUtil.loopFiles(inputPath);
 
         for (File file : files) {

@@ -1,12 +1,12 @@
-package com.yupi.generator;
+package com.yupi.maker.generator.file;
 
-import com.yupi.model.MainTemplateConfig;
+import com.yupi.maker.model.DataModel;
 import freemarker.template.TemplateException;
 
 import java.io.File;
 import java.io.IOException;
 
-public class MainGenerator {
+public class FileGenerator {
 
     public static void doGenerator(Object model) throws IOException, TemplateException {
         String projectPath = System.getProperty("user.dir");
@@ -16,22 +16,22 @@ public class MainGenerator {
         String inputPath = new File(parentFile, "follow-yuzi-generator-demo-projects\\acm-template").getAbsolutePath();
         String outputPath = projectPath;
         // 生成静态文件
-        StaticGenerator.copyFilesByReCurSion(inputPath, outputPath);
+        StaticFileGenerator.copyFilesByHutool(inputPath, outputPath);
 
         //生成动态文件
         String inputDynamicFilePath = projectPath + File.separator + "src\\main\\resources\\templates\\MainTemplate.java.ftl";
         String outputDynamicFilePath = projectPath + File.separator + "acm-template\\src\\com\\yupi\\acm\\MainTemplate.java";
-        DynamicGenerator.doGenerate(inputDynamicFilePath, outputDynamicFilePath, model);
+        DynamicFileGenerator.doGenerate(inputDynamicFilePath, outputDynamicFilePath, model);
     }
 
     public static void main(String[] args) throws IOException, TemplateException {
         //创建数据模型
-        MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
-        mainTemplateConfig.setAuthor("tjh");
+        DataModel dataModel = new DataModel();
+        dataModel.setAuthor("tjh");
         // 不循环
-        mainTemplateConfig.setLoop(true);
-        mainTemplateConfig.setOutputText("求和结果：");
+        dataModel.setLoop(true);
+        dataModel.setOutputText("求和结果：");
 
-        doGenerator(mainTemplateConfig);
+        doGenerator(dataModel);
     }
 }
